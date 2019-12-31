@@ -38,3 +38,5 @@
         - vim
     - name: Link Castles
       command: "{{ ansible_user_dir }}/.homesick/repos/homeshick/bin/homeshick link -f -q"
+    - name: Install Vim Plugins
+      command: "nvim -E -s -u {{ ansible_user_dir }}/.config/nvim/init.vim +PluginInstall +qall"
