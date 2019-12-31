@@ -2,18 +2,18 @@
   become: true
   tasks:
   - name: Install packages
-    apt: name={{item}}
-    with_items:
-      - htop
-      - tmux
-      - awesome
-      - dex
-      - lightdm
-      - arandr
-      - compton
-      - exuberant-ctags
-      - neovim
-      - oxygen-icon-theme
-      - oxygencursors
-      - xsecurelock
-      - xss-lock
+    apt:
+      name:
+        - htop
+        - tmux
+        - awesome
+        - dex
+        - lightdm
+        - arandr
+        - compton
+        - exuberant-ctags
+        - neovim
+        - oxygen-icon-theme
+        - oxygencursors
+        - xsecurelock
+        - xss-lock
