@@ -7,7 +7,9 @@
     chdir: "{{ ansible_user_dir }}/.config/nvim/bundle/vimproc.vim"
 
 - name: Build PyEnvs for Vim
-  command: "{{ ansible_user_dir }}/.pyenv/bin/pyenv virtualenv {{ item }} nvim-python-{{ item }}"
+  command:
+    cmd: "{{ ansible_user_dir }}/.pyenv/bin/pyenv virtualenv {{ item }} nvim-python-{{ item }}"
+    creates: "{{ ansible_user_dir }}/.pyenv/versions/{{ item }}/envs/nvim-python-{{ item }}"
   with_items:
     - "{{ python2_version }}"
     - "{{ python3_version }}"
