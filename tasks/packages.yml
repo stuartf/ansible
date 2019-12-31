@@ -8,6 +8,7 @@
       - libreadline-dev
       - libsqlite3-dev
       - libssl-dev
+      - zlib1g-dev
       - neovim
       - tmux
   tags:
