@@ -1,0 +1,15 @@
+- name: Checkout HomeSHick git
+  git: repo=git://github.com/andsens/homeshick.git dest="{{ ansible_user_dir }}/.homesick/repos/homeshick"
+- name: Checkout Castles
+  git: repo="git://github.com/stuartf/{{ item }}-castle.git" dest="{{ ansible_user_dir }}/.homeshick/repos/{{ item }}-castle"
+  with_items:
+    - awesome
+    - bash
+    - git
+    - gtk
+    - termit
+    - tmux
+    - vim
+
+- name: Link Castles
+  command: "{{ ansible_user_dir }}/.homesick/repos/homeshick/bin/homeshick link -f -q"

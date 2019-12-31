@@ -1,0 +1,2 @@
+- name: Install Vim Plugins
+  command: "nvim -E -s -u {{ ansible_user_dir }}/.config/nvim/init.vim +PluginInstall +qall"

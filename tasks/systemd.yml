@@ -1,0 +1,10 @@
+- name: Enable User Systemd Services
+  systemd:
+    daemon_reexec: true
+    enabled: true
+    scope: user
+    state: started
+    name: "{{ item }}"
+  with_items:
+    - xss-lock
+    - compton
