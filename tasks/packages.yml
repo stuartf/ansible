@@ -2,15 +2,25 @@
   apt:
     name:
       - build-essential
+      - bzip2
       - exuberant-ctags
       - htop
       - git
+      - libbz2-dev
+      - libffi-dev
+      - libgdbm-dev
+      - libgdbm-compat-dev
+      - liblzma-dev
+      - libncursesw5-dev
       - libreadline-dev
       - libsqlite3-dev
       - libssl-dev
-      - zlib1g-dev
       - neovim
+      - openssl
+      - sqlite3
       - tmux
+      - uuid-dev
+      - zlib1g-dev
   tags:
     - packages
 
