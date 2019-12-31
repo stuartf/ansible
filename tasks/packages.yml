@@ -21,6 +21,7 @@
       - oxygencursors
       - termit
       - xsecurelock
+      - xsel
       - xss-lock
   tags:
     - gui

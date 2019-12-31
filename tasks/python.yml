@@ -1,0 +1,17 @@
+- name: Install pyenv
+  git:
+    repo: https://github.com/yyuu/pyenv.git
+    dest: "{{ ansible_user_dir }}/.pyenv"
+
+- name: Install pyenv-virtualenv plugin
+  git:
+    repo: https://github.com/yyuu/pyenv-virtualenv.git
+    dest: "{{ ansible_user_dir }}/.pyenv/plugins/pyenv-virtualenv"
+
+- name: Install python versions
+  command: 
+    cmd: "{{ ansible_user_dir }}/.pyenv/bin/pyenv install {{ item }}"
+    creates: "{{ ansible_user_dir }}/.pyenv/versions/{{ item }}"
+  with_items:
+    - "{{ python3_version }}"
+    - "{{ python2_version }}"

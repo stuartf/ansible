@@ -13,7 +13,11 @@
   remote_user: root
   become: true
   become_user: stuart
+  vars:
+    python3_version: 3.7.5
+    python2_version: 2.7.17
   tasks:
     - include: tasks/homeshick.yml
     - include: tasks/systemd.yml
+    - include: tasks/python.yml
     - include: tasks/vim.yml
