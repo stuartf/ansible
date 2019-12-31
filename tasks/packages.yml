@@ -1,18 +1,27 @@
 - name: Install packages
   apt:
     name:
+      - exuberant-ctags
+      - htop
+      - git
+      - neovim
+      - tmux
+  tags:
+    - packages
+
+- name: Install GUI packages
+  apt:
+    name:
       - arandr
       - awesome
       - compton
       - dex
-      - exuberant-ctags
-      - htop
-      - git
       - lightdm
-      - neovim
       - oxygen-icon-theme
       - oxygencursors
       - termit
-      - tmux
       - xsecurelock
       - xss-lock
+  tags:
+    - gui
+    - packages

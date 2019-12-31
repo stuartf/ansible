@@ -1,2 +1,7 @@
 - name: Install Vim Plugins
   command: "nvim -E -s -u {{ ansible_user_dir }}/.config/nvim/init.vim +PluginInstall +qall"
+
+- name: Build VimProc
+  command:
+    cmd: make
+    chdir: "{{ ansible_user_dir }}/.config/nvim/bundle/vimproc.vim"

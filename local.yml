@@ -4,6 +4,8 @@
     - name: Update Repositories
       apt: update_cache=yes
       changed_when: false
+      tags:
+        - packages
   tasks:
     - include: tasks/packages.yml
 
