@@ -6,20 +6,24 @@
     cmd: make
     chdir: "{{ ansible_user_dir }}/.config/nvim/bundle/vimproc.vim"
 
-- name: Setup python2 PyEnv for Vim
+- name: Build PyEnvs for Vim
+  command: "{{ ansible_user_dir }}/.pyenv/bin/pyenv virtualenv {{ item }} nvim-python-{{ item }}"
+  with_items:
+    - "{{ python2_version }}"
+    - "{{ python3_version }}"
+
+- name: Install python2 deps for Vim
   vars:
     pyenv_root: "{{ ansible_user_dir }}/.pyenv"
   pip:
     virtualenv: "{{ pyenv_root }}/versions/{{ python2_version }}/envs/nvim-python-{{ python2_version }}"
-    virtualenv_command: "{{ pyenv_root }}/bin/pyenv virtualenv nvim-python-{{ python2_version }}"
     name: pynvim
 
-- name: Setup python3 PyEnv for Vim
+- name: Install python3 deps for Vim
   vars:
     pyenv_root: "{{ ansible_user_dir }}/.pyenv"
   pip:
     virtualenv: "{{ pyenv_root }}/versions/{{ python3_version }}/envs/nvim-python-{{ python3_version }}"
-    virtualenv_command: "{{ pyenv_root }}/bin/pyenv virtualenv nvim-python-{{ python3_version }}"
     name:
       - pynvim
       - slugify
