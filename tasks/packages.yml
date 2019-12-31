@@ -1,9 +1,13 @@
 - name: Install packages
   apt:
     name:
+      - build-essential
       - exuberant-ctags
       - htop
       - git
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
       - neovim
       - tmux
   tags:
