@@ -1,7 +1,7 @@
 - name: Checkout HomeSHick git
   git: repo=https://github.com/andsens/homeshick.git dest="{{ ansible_user_dir }}/.homesick/repos/homeshick"
 - name: Checkout Castles
-  git: repo="git://github.com/stuartf/{{ item }}-castle.git" dest="{{ ansible_user_dir }}/.homesick/repos/{{ item }}-castle"
+  git: repo="git@github.com:stuartf/{{ item }}-castle.git" dest="{{ ansible_user_dir }}/.homesick/repos/{{ item }}-castle"
   with_items:
     - awesome
     - bash
